@@ -8,25 +8,6 @@ sap.ui.define(
   function (Controller, MessageToast, JSONModel, ResourceModel) {
     "use strict";
     return Controller.extend("", {
-      onInit: function () {
-        //set data model on VIEW
-        var oData = {
-          recipient: {
-            name: "World",
-          },
-        };
-
-        var oModel = new JSONModel(oData);
-        this.getView().setModel(oModel);
-
-        //set i18n model on view [e un resource file]
-        var i18nModel = new ResourceModel({
-          bundleName: "sap.ui.demo.walkthrough.i18n.i18n",
-        });
-
-        this.getView().setModel(i18nModel, "i18n");
-      },
-
       onShowHello: function () {
         //read the message from i18n model
         var oBundle = this.getView().getModel("i18n").getResourceBundle();
