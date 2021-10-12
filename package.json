@@ -1,0 +1,18 @@
+{
+  "name": "BasicTemplate",
+  "version": "1.0.0",
+  "author": "SAP SE",
+  "description": "UI5 Demo App - Basic Template",
+  "private": true,
+  "scripts": {
+    "start": "ui5 serve",
+    "lint": "eslint webapp"
+  },
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "@ui5/cli": "^1.0.0",
+    "eslint": "^4.19.1"
+  }
+}
