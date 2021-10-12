@@ -3,24 +3,26 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock = "true">
-    <App>
-        <pages>
-            <Page>
-                <content>
-                    <Panel headerText="{i18n>homePageTitle}">
-                        <content>
-                            <Button
-                                text="{i18n>showHelloButtonText}"
-                                press=".onShowHello"/>
-                            <Input
-                                value="{/recipient/name}"
-                                description="Hello {/recipient/name}"
-                                valueLiveUpdate="true"
-                                width="60%"/>
-                        </content>
-                    </Panel>
-                </content>
-            </Page>
-        </pages>
-    </App>
+    <Shell backgroundColor="grey">
+        <App>
+            <pages>
+                <Page>
+                    <content>
+                        <Panel headerText="{i18n>homePageTitle}">
+                            <content>
+                                <Button
+                                    text="{i18n>showHelloButtonText}"
+                                    press=".onShowHello"/>
+                                <Input
+                                    value="{/recipient/name}"
+                                    description="Hello {/recipient/name}"
+                                    valueLiveUpdate="true"
+                                    width="60%"/>
+                            </content>
+                        </Panel>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
 </mvc:View>
