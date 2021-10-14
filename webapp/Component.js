@@ -1,37 +1,33 @@
-sap.ui.define(
-  [
-    "sap/ui/core/UIComponent",
-    "sap/ui/model/json/JSONModel",
-    "sap/ui/model/resource/ResourceModel",
-  ],
-  function (UIComponent, JSONModel, ResourceModel) {
-    "use strict";
+sap.ui.define([
+	"sap/ui/core/UIComponent",
+	"sap/ui/model/json/JSONModel"
+], function (UIComponent, JSONModel) {
+	"use strict";
 
-    return UIComponent.extend("sap.ui.demo.walkthrough.Component", {
-      metadata: {
-        interfaces: ["sap.ui.core.IAsyncContentCreation"],
-        manifest: "json"
-      },
+	return UIComponent.extend("sap.ui.demo.walkthrough.Component", {
 
-      init: function () {
-        //call the init function of the parrent
-        UIComponent.prototype.init.apply(this, arguments);
+		metadata: {
+			interfaces: ["sap.ui.core.IAsyncContentCreation"],
+			manifest: "json"
+		},
 
-        // set data model
-        var oData = {
-          recipient: {
-            name: "World",
-          },
-        };
-        var oModel = new JSONModel(oData);
-        this.setModel(oModel);
+		init: function () {
+			// call the init function of the parent
+			UIComponent.prototype.init.apply(this, arguments);
 
-        // set i18n model
-        var i18nModel = new ResourceModel({
-          bundleName: "sap.ui.demo.walkthrough.i18n.i18n",
-        });
-        this.setModel(i18nModel, "i18n");
-      },
-    });
-  }
-);
+			// set data model
+			var oData = {
+				recipient: {
+					name: "World"
+				}
+			};
+			var oModel = new JSONModel(oData);
+			this.setModel(oModel);
+
+			// create the views based on the url/hash
+			this.getRouter().initialize();
+		}
+
+	});
+
+});
